@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using DotNetCoreApp.Data;
 using DotNetCoreApp.Models;
 using DotNetCoreApp.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DotNetCoreApp.Controllers
 {
+    [Authorize]
     public class ClientsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -70,7 +72,7 @@ namespace DotNetCoreApp.Controllers
         // GET: Clients/Create
         public IActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Clients/Create
@@ -86,7 +88,7 @@ namespace DotNetCoreApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Clients/Edit/5
