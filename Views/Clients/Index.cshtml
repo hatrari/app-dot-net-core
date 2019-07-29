@@ -51,7 +51,7 @@
             </td>
             <td>
                 <a class="modifier-btn" data-toggle="modal" data-target=".my-modal" id="@item.ID" href="#">Modifier</a> |
-                <a asp-route-id="@item.ID">Supprimer</a>
+                <a asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
             </td>
         </tr>
 }
