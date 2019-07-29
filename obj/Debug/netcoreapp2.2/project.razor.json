@@ -2973,8 +2973,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Clients/Index.cshtml",
+      "TargetPath": "Views/Clients/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/_ViewImports.cshtml",
       "TargetPath": "Views/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Clients/Delete.cshtml",
+      "TargetPath": "Views/Clients/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2998,6 +3008,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Clients/Edit.cshtml",
+      "TargetPath": "Views/Clients/Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas/Identity/Pages/Account/Login.cshtml",
       "TargetPath": "Areas/Identity/Pages/Account/Login.cshtml",
       "FileKind": "mvc"
@@ -3005,6 +3020,11 @@
     {
       "FilePath": "Views/Shared/_LoginPartial.cshtml",
       "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Clients/Create.cshtml",
+      "TargetPath": "Views/Clients/Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3020,6 +3040,11 @@
     {
       "FilePath": "Views/Shared/_Layout.cshtml",
       "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Clients/Details.cshtml",
+      "TargetPath": "Views/Clients/Details.cshtml",
       "FileKind": "mvc"
     }
   ],

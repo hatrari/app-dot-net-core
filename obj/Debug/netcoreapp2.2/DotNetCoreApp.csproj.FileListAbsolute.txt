@@ -37,3 +37,8 @@
 /tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/Account/_ViewImports.g.cshtml.cs
 /tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.g.cshtml.cs
 /tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Areas/Identity/Pages/_ViewImports.g.cshtml.cs
+/tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Views/Clients/Create.g.cshtml.cs
+/tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Views/Clients/Delete.g.cshtml.cs
+/tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Views/Clients/Details.g.cshtml.cs
+/tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Views/Clients/Edit.g.cshtml.cs
+/tmp/DotNetCoreApp/obj/Debug/netcoreapp2.2/Razor/Views/Clients/Index.g.cshtml.cs

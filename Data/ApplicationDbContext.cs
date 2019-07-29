@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DotNetCoreApp.Models;
 
 namespace DotNetCoreApp.Data
 {
@@ -12,5 +13,6 @@ namespace DotNetCoreApp.Data
             : base(options)
         {
         }
+        public DbSet<DotNetCoreApp.Models.Client> Clients { get; set; }
     }
 }
