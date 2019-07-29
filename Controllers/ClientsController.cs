@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DotNetCoreApp.Data;
 using DotNetCoreApp.Models;
+using DotNetCoreApp.Helpers;
 
 namespace DotNetCoreApp.Controllers
 {
@@ -20,9 +21,32 @@ namespace DotNetCoreApp.Controllers
         }
 
         // GET: Clients
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, int? pageNumber)
         {
-            return View(await _context.Clients.ToListAsync());
+            if (!_context.Clients.Any())
+            {
+                for(int i=0; i<26; i++)
+                {
+                    Client client = new Client();
+                    client.FirstName = "Prénom " + i;
+                    client.LastName = "Nom " + i;
+                    client.BirthDay = DateTime.Now.AddYears(i*-1);
+                    _context.Clients.Add(client);
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            IQueryable<Client> clients = from s in _context.Clients select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(c => c.FirstName.Contains(searchString) ||
+                            c.LastName.Contains(searchString) ||
+                            c.BirthDay.ToString().Contains(searchString));
+            }
+
+            int pageSize = 10;
+            return View(await PaginatedList<Client>.CreateAsync(clients.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Clients/Details/5
