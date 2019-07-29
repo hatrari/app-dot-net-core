@@ -104,7 +104,7 @@ namespace DotNetCoreApp.Controllers
             {
                 return NotFound();
             }
-            return View(client);
+            return PartialView(client);
         }
 
         // POST: Clients/Edit/5
@@ -139,7 +139,7 @@ namespace DotNetCoreApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(client);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Clients/Delete/5

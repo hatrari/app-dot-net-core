@@ -4,16 +4,16 @@
     ViewData["Title"] = "Clients";
 }
 
-<p>
-    <button id="nouveau-btn" class="btn btn-primary" data-toggle="modal" data-target=".my-modal">Nouveau</button>
-</p>
-
 <div class="modal fade my-modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content" id="my-modal-content">
     </div>
   </div>
 </div>
+
+<p>
+    <button id="nouveau-btn" class="btn btn-primary" data-toggle="modal" data-target=".my-modal">Nouveau</button>
+</p>
 
 <form class="form-inline my-2 my-lg-0">
     <p>
@@ -50,8 +50,8 @@
                 @Html.DisplayFor(modelItem => item.BirthDay)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Modifier</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
+                <a class="modifier-btn" data-toggle="modal" data-target=".my-modal" id="@item.ID" href="#">Modifier</a> |
+                <a asp-route-id="@item.ID">Supprimer</a>
             </td>
         </tr>
 }
@@ -80,6 +80,12 @@
     <script>
         $("#nouveau-btn").click(() => {
             $.get("/Clients/Create", function(data) {
+                $("#my-modal-content").html(data);
+            });
+        });
+
+         $(".modifier-btn").click((e) => {
+            $.get("/Clients/Edit/" + e.target.id, function(data) {
                 $("#my-modal-content").html(data);
             });
         });
